@@ -1,1 +1,178 @@
-<h3>Welcome</h3>
+
+<nav class="navbar fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
+  <div class="container">
+    <div class="navbar-translate">
+      <a class="navbar-brand" href="#">
+        Home </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)" onclick="scrollToDownload()">
+            <i class="material-icons">event_available</i> Book a Lesson
+          </a>
+        </li>
+        <li class="dropdown nav-item">
+          <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+            <i class="material-icons">ondemand_video</i> Resources
+          </a>
+          <div class="dropdown-menu dropdown-with-icons">
+            <a href="./index.html" class="dropdown-item">
+              <i class="material-icons">ondemand_video</i> Videos
+            </a>
+            <a href="https://demos.creative-tim.com/material-kit/docs/2.0/getting-started/introduction.html" class="dropdown-item">
+              <i class="material-icons">content_paste</i> Slides
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://twitter.com/danielsonlineenlgish" target="_blank" data-original-title="Follow me on Twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.facebook.com/danielsonlineenlgish" target="_blank" data-original-title="Like me on Facebook">
+            <i class="fa fa-facebook-square"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.instagram.com/danielsonlineenlgish" target="_blank" data-original-title="Follow me on Instagram">
+            <i class="fa fa-instagram"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="page-header header-filter clear-filter" data-parallax="true" style="background-color: #D95D41;">
+  <div class="container page-title-container">
+    <div class="row">
+      <div class="col-md-12">
+        <%= image_tag("main-logo.png", height: '166.5', width: '192') %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="brand">
+          <p id='page-brand'>Daniel's Online English</p>
+          <p id='page-sub-brand'>Fun and interactive English lessons!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="main main-raised">
+  <div class='calendly-inline-widget' data-url='https://calendly.com/danielsonlineenglish' style='min-width:320px;height:580px;'></div>
+  <script src='https://assets.calendly.com/assets/external/widget.js' type='text/javascript'></script>
+<div>
+<footer class="footer" data-background-color="black">
+  <div class="container">
+    <nav class="float-left">
+      <ul>
+        <li>
+          <a href="#about">
+            About me
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="copyright float-right">
+      &copy;
+      <script>
+        document.write(new Date().getFullYear())
+      </script>, Daniel's Online English
+    </div>
+  </div>
+</footer>
+<!--   Core JS Files   -->
+<script src="./assets/js/core/jquery.min.js" type="text/javascript"></script>
+<script src="./assets/js/core/popper.min.js" type="text/javascript"></script>
+<script src="./assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+<script src="./assets/js/plugins/moment.min.js"></script>
+<!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+<script src="./assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+<script src="./assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+<!--	Plugin for Sharrre btn -->
+<script src="./assets/js/plugins/jquery.sharrre.js" type="text/javascript"></script>
+<!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+<script src="./assets/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
+<script>
+  $(document).ready(function() {
+    //init DateTimePickers
+    materialKit.initFormExtendedDatetimepickers();
+
+    // Sliders Init
+    materialKit.initSliders();
+  });
+
+
+  function scrollToDownload() {
+    if ($('.section-download').length != 0) {
+      $("html, body").animate({
+        scrollTop: $('.section-download').offset().top
+      }, 1000);
+    }
+  }
+
+
+  $(document).ready(function() {
+
+    $('#facebook').sharrre({
+      share: {
+        facebook: true
+      },
+      enableHover: false,
+      enableTracking: false,
+      enableCounter: false,
+      click: function(api, options) {
+        api.simulateClick();
+        api.openPopup('facebook');
+      },
+      template: '<i class="fab fa-facebook-f"></i> Facebook',
+      url: 'https://demos.creative-tim.com/material-kit/index.html'
+    });
+
+    $('#googlePlus').sharrre({
+      share: {
+        googlePlus: true
+      },
+      enableCounter: false,
+      enableHover: false,
+      enableTracking: true,
+      click: function(api, options) {
+        api.simulateClick();
+        api.openPopup('googlePlus');
+      },
+      template: '<i class="fab fa-google-plus"></i> Google',
+      url: 'https://demos.creative-tim.com/material-kit/index.html'
+    });
+
+    $('#twitter').sharrre({
+      share: {
+        twitter: true
+      },
+      enableHover: false,
+      enableTracking: false,
+      enableCounter: false,
+      buttons: {
+        twitter: {
+          via: 'CreativeTim'
+        }
+      },
+      click: function(api, options) {
+        api.simulateClick();
+        api.openPopup('twitter');
+      },
+      template: '<i class="fab fa-twitter"></i> Twitter',
+      url: 'https://demos.creative-tim.com/material-kit/index.html'
+    });
+
+  });
+</script>
